@@ -1,35 +1,35 @@
-# Rebootkey UnlockingServer — frontend foundation
+# Rebootkey UnlockingServer frontend foundation
 
-A responsive Rebootkey-branded frontend foundation for the mobile device services platform. This is the first frontend milestone: the public landing page and account entry screens establish the shared visual system and responsible-service messaging.
+This repository currently contains a responsive, brand-aligned frontend preview. It is not yet a production platform and does not contain a connected API, database, authentication service, payment processing, supplier integration, live dashboard data, or file delivery.
 
-## Included
+## Pages and shared assets
 
-- `index.html` — public landing page with the four service categories, process overview, privacy and authorization guidance, FAQ, and responsive navigation.
-- `login.html` and `register.html` — accessible account-entry layouts. They do **not** simulate authentication or transmit credentials.
-- `assets/css/site.css` — shared design system, responsive layout, and reduced-motion support.
-- `assets/js/site.js` — shared navigation behavior, dynamic copyright year, and honest client-side validation for not-yet-connected auth forms.
-- `assets/img/rebootkey-mark.svg` — scalable lock mark using the logo colors.
+- Public site: `index.html`, `about.html`, `services.html`, category pages, `pricing.html`, `contact.html`, `faq.html`, `terms.html`, and `privacy.html`.
+- Authentication layouts: login, registration, password reset, and email verification. They do not submit or store credentials.
+- Customer and admin workspace layouts: dashboard, orders, wallets, files, downloads, support, profile, notifications, and management sections. New shared workspace pages are rendered by `assets/js/portal.js` and styled by `assets/css/portal.css`.
+- Brand assets/styles: `assets/img/rebootkey-mark.svg` and `assets/css/site.css`.
 
 ## Run locally
 
-This milestone is static frontend code and does not require a backend. From the repository root, serve the files with any static HTTP server, for example:
+Serve the repository root using a static server:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000`. Bootstrap and Font Awesome currently load from CDNs.
+Open `http://localhost:8000`. Bootstrap, Font Awesome, and web fonts currently use external CDNs.
 
-## Important implementation status
+## Safety and implementation status
 
-The pages are a frontend foundation, not a production service platform. Authentication, orders, supplier connections, file delivery, payments, wallet changes, and customer data are not connected and must not be presented as working yet. The forms intentionally do not submit or store credentials. Production integrations require the ASP.NET Core API, SQL Server, secure configuration, documented supplier contracts, and verified payment webhooks. Never put API credentials in browser code.
+Account forms and portal screens are intentionally marked as previews. No account data, sample orders, wallet balances, payment confirmations, supplier responses, or download links should be treated as real. Do not enter real personal or payment information.
 
-## Planned build sequence
+When backend work begins, use ASP.NET Core Identity, role-protected APIs, SQL Server, server-side payment verification, encrypted secret configuration, audited admin actions, idempotent order processing, and access-controlled file delivery. Never put supplier or payment credentials in browser code. Never request or store customer passwords, authentication tokens, or private device credentials. Support only devices the customer owns or is authorized to service.
 
-1. Expand the public and customer/admin page system using these shared styles and components.
-2. Add the ASP.NET Core API and SQL Server persistence, then secure identity and roles.
-3. Implement service catalog and order lifecycle with supplier adapters and idempotent background processing.
-4. Add verified payment/wallet workflows, secure file delivery, support, notifications, and admin tools.
-5. Add automated tests, API documentation, deployment configuration, and operational guidance.
+## Next implementation milestones
 
-Only services the customer owns or is authorized to service are in scope. Never request, store, or expose customer device passwords, account passwords, or authentication tokens.
+1. Complete frontend page coverage and verify navigation/accessibility.
+2. Add the ASP.NET Core solution and SQL Server persistence.
+3. Implement secure identity and role authorization.
+4. Add catalog, orders, background processing, and documented supplier adapters.
+5. Add verified payment/wallet flows, file entitlements, support, notifications, and admin APIs.
+6. Add automated tests, Swagger/OpenAPI, deployment configuration, logging, and backups.
