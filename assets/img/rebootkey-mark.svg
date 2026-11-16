@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Rebootkey lock mark</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9">
+    <path stroke="#E50925" d="M34 57V34a24 24 0 0 1 48 0v5a9 9 0 0 1-18 0v-5a6 6 0 0 0-12 0v23"/>
+    <path stroke="#E50925" d="M34 57h51a12 12 0 0 1 12 12v4"/>
+    <path stroke="#E50925" d="M34 57a12 12 0 0 0-12 12v38a12 12 0 0 0 12 12"/>
+    <path stroke="#2110B8" d="M97 84v23a12 12 0 0 1-12 12H49"/>
+    <path stroke="#2110B8" d="M90 47l3-10m10 17 9-6m-5 17 10 3"/>
+    <path stroke="#2110B8" d="M63 75a13 13 0 0 0-2 23l-2 12h15l-2-12a13 13 0 0 0-9-23Z"/>
+  </g>
+  <circle cx="64" cy="86" r="5" fill="#E50925"/>
+</svg>
